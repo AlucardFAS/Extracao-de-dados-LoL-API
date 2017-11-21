@@ -5,17 +5,24 @@
  */
 package apilolpi;
 
+import java.awt.Label;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import org.json.JSONObject;
 
 public class BuscaJogador {
     
+        String nome;
+        int id;
+        int level;
+    
     public void BuscaJogador () throws MalformedURLException, IOException{
+        
     
         String summonerName = JOptionPane.showInputDialog("Digite seu nome de invocador");
         String server = JOptionPane.showInputDialog("Digite seu servidor");
@@ -29,13 +36,12 @@ public class BuscaJogador {
         
         JSONObject ApiSN = new JSONObject(lerApi);
         
-        String nome = ApiSN.getString("name");
-        int id = ApiSN.getInt("id");
-        int level = ApiSN.getInt("summonerLevel");
+        this.nome = ApiSN.getString("name");
+        this.id = ApiSN.getInt("id");
+        this.level = ApiSN.getInt("summonerLevel");
         
         
-        
-        BuscaMatches partida = new BuscaMatches(id,server);
+        BuscaMatches partida = new BuscaMatches(this.id,server);
 
     }
     
