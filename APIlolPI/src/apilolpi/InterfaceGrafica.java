@@ -10,6 +10,7 @@ public class InterfaceGrafica extends javax.swing.JFrame {
    
     BuscaJogador busca = new BuscaJogador();
     
+    
     public InterfaceGrafica() {
         initComponents();
     }
