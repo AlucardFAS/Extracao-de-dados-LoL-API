@@ -22,7 +22,7 @@ public class BuscaJogador {
         int level;
         int accountId;
     
-    public void BuscaJogador () throws MalformedURLException, IOException{
+    public void BuscaJogador () throws MalformedURLException, IOException extends InterfaceGrafica{
         
     
         String summonerName = JOptionPane.showInputDialog("Digite seu nome de invocador");
@@ -41,6 +41,10 @@ public class BuscaJogador {
         this.id = ApiSN.getInt("id");
         this.level = ApiSN.getInt("summonerLevel");
         this.accountId = ApiSN.getInt("accountId");
+        
+        InterfaceGrafica.SummonerNameForm.setText(this.nome);
+        InterfaceGrafica.IDForm.setText(Integer.toString(this.id));
+        InterfaceGrafica.LevelForm.setText(Integer.toString(this.level));        
         
         System.out.println("nome de invocador: "+nome);
         System.out.println("id do invocador: "+id);
