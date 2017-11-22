@@ -22,13 +22,13 @@ public class BuscaJogador {
         int level;
         int accountId;
     
-    public void BuscaJogador () throws MalformedURLException, IOException extends InterfaceGrafica{
+    public void BuscaJogador () throws MalformedURLException, IOException{
         
     
         String summonerName = JOptionPane.showInputDialog("Digite seu nome de invocador");
         String server = JOptionPane.showInputDialog("Digite seu servidor");
         
-        URL lolApiName = new URL("https://"+server+"1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"+summonerName+"?api_key=RGAPI-c566d7d3-c9e4-4c0f-8f4b-b1927d145ee7");
+        URL lolApiName = new URL("https://"+server+"1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"+summonerName+"?api_key=RGAPI-a6039025-1302-445d-9b06-205b197b6ddc");
         
         BufferedReader readName = new BufferedReader(new InputStreamReader(lolApiName.openStream()));
         String lerApi = readName.readLine();
@@ -42,17 +42,14 @@ public class BuscaJogador {
         this.level = ApiSN.getInt("summonerLevel");
         this.accountId = ApiSN.getInt("accountId");
         
-        InterfaceGrafica.SummonerNameForm.setText(this.nome);
-        InterfaceGrafica.IDForm.setText(Integer.toString(this.id));
-        InterfaceGrafica.LevelForm.setText(Integer.toString(this.level));        
-        
+        System.out.println("--------Invocador---------");
         System.out.println("nome de invocador: "+nome);
         System.out.println("id do invocador: "+id);
         System.out.println("level do invocador: "+level);
         
         
         BuscaMatches partida = new BuscaMatches(this.accountId,server);
-        
+        BuscaLiga elo = new BuscaLiga(this.id,server);
         
     }
     

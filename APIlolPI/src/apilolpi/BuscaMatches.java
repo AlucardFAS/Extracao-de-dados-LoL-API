@@ -16,7 +16,7 @@ public class BuscaMatches {
 
     BuscaMatches(int id, String server)throws MalformedURLException, IOException
     {
-        URL lolApiMatches = new URL("https://"+server+"1.api.riotgames.com/lol/match/v3/matchlists/by-account/"+id+"?api_key=RGAPI-c566d7d3-c9e4-4c0f-8f4b-b1927d145ee7");
+        URL lolApiMatches = new URL("https://"+server+"1.api.riotgames.com/lol/match/v3/matchlists/by-account/"+id+"?api_key=RGAPI-a6039025-1302-445d-9b06-205b197b6ddc");
         BufferedReader readMatches = new BufferedReader(new InputStreamReader(lolApiMatches.openStream()));
         String lerApi2 = readMatches.readLine();
         
@@ -42,12 +42,12 @@ public class BuscaMatches {
                 bottom += 1;
             }
         }
-        
+        System.out.println("--------partidas---------");
         System.out.println("jogos de TOP: "+top);
         System.out.println("jogos de JUNGLE: "+jungle);
         System.out.println("jogos de MID: "+mid);
         System.out.println("jogos no BOT: "+bottom);
-        
+        System.out.println("--------Elo---------");
     }
     
     
