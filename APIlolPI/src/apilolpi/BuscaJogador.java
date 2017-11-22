@@ -28,7 +28,7 @@ public class BuscaJogador {
         String summonerName = JOptionPane.showInputDialog("Digite seu nome de invocador");
         String server = JOptionPane.showInputDialog("Digite seu servidor");
         
-        URL lolApiName = new URL("https://"+server+"1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"+summonerName+"?api_key=RGAPI-b9b9033d-86e6-4e21-be14-4f08ceadd960");
+        URL lolApiName = new URL("https://"+server+"1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"+summonerName+"?api_key=RGAPI-c566d7d3-c9e4-4c0f-8f4b-b1927d145ee7");
         
         BufferedReader readName = new BufferedReader(new InputStreamReader(lolApiName.openStream()));
         String lerApi = readName.readLine();
@@ -42,9 +42,9 @@ public class BuscaJogador {
         this.level = ApiSN.getInt("summonerLevel");
         this.accountId = ApiSN.getInt("accountId");
         
-        System.out.println(nome);
-        System.out.println(id);
-        System.out.println(level);
+        System.out.println("nome de invocador: "+nome);
+        System.out.println("id do invocador: "+id);
+        System.out.println("level do invocador: "+level);
         
         
         BuscaMatches partida = new BuscaMatches(this.accountId,server);

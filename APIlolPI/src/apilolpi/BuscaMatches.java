@@ -6,27 +6,47 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class BuscaMatches {
 
-    String lane;
+    String lanes;
+    int top, jungle, mid, bottom = 0;
 
     BuscaMatches(int id, String server)throws MalformedURLException, IOException
     {
-        URL lolApiMatches = new URL("https://"+server+"1.api.riotgames.com/lol/match/v3/matchlists/by-account/"+id+"?api_key=RGAPI-b9b9033d-86e6-4e21-be14-4f08ceadd960");
+        URL lolApiMatches = new URL("https://"+server+"1.api.riotgames.com/lol/match/v3/matchlists/by-account/"+id+"?api_key=RGAPI-c566d7d3-c9e4-4c0f-8f4b-b1927d145ee7");
         BufferedReader readMatches = new BufferedReader(new InputStreamReader(lolApiMatches.openStream()));
         String lerApi2 = readMatches.readLine();
         
         JSONObject ApiMCH = new JSONObject(lerApi2);
+        JSONArray ApiArrMCHs = ApiMCH.getJSONArray("matches");
         
+        for (int i = 0; i < ApiArrMCHs.length(); i++) {
+            
+            JSONObject lane = ApiArrMCHs.getJSONObject(i);
+            
+            lanes = lane.getString("lane");
+            
+            if ("TOP".equals(lanes)){
+                top += 1;
+            }
+            if ("JUNGLE".equals(lanes)){
+                jungle += 1;
+            }
+            if ("MID".equals(lanes)){
+                mid += 1;
+            }
+            if ("BOTTOM".equals(lanes)){
+                bottom += 1;
+            }
+        }
         
-        
-        
-        
-        
-        
-        System.out.println(lerApi2);
+        System.out.println("jogos de TOP: "+top);
+        System.out.println("jogos de JUNGLE: "+jungle);
+        System.out.println("jogos de MID: "+mid);
+        System.out.println("jogos no BOT: "+bottom);
         
     }
     
