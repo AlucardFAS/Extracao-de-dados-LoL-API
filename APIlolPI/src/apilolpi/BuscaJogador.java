@@ -23,31 +23,33 @@ public class BuscaJogador {
         int accountId;
     
     public void BuscaJogador () throws MalformedURLException, IOException{
+        String summonerName = JOptionPane.showInputDialog("Digite seu nome de invocador");//crianda caixa de texto para armazenar nome do invocador
+        String server = JOptionPane.showInputDialog("Digite seu servidor");//caixa para armazenar o server
         
-    
-        String summonerName = JOptionPane.showInputDialog("Digite seu nome de invocador");
-        String server = JOptionPane.showInputDialog("Digite seu servidor");
+        //criando conexao com a API
+        URL lolApiName = new URL("https://"+server+"1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"+summonerName+"?api_key=RGAPI-a6039025-1302-445d-9b06-205b197b6ddc");//url da api com a chave para o acesso
         
-        URL lolApiName = new URL("https://"+server+"1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"+summonerName+"?api_key=RGAPI-a6039025-1302-445d-9b06-205b197b6ddc");
-        
+        //criando buffer para ler e armazenar todos os dados da api 
         BufferedReader readName = new BufferedReader(new InputStreamReader(lolApiName.openStream()));
         String lerApi = readName.readLine();
         
-        
-        
+        //criando objeto json da informações buscadas para o armazenamento
         JSONObject ApiSN = new JSONObject(lerApi);
         
-        this.nome = ApiSN.getString("name");
-        this.id = ApiSN.getInt("id");
-        this.level = ApiSN.getInt("summonerLevel");
-        this.accountId = ApiSN.getInt("accountId");
+        /*Armazena nas variaveis apenas os dados que queremos trabalhar.
+        No JSON pedimos para armazenar os dado que está em sequencia do nosso parametro*/
+        this.nome = ApiSN.getString("name");//armazendo o nome do invocador. Exemplo no json ={\"name\" : \"nome_do_invocador\"} 
+        this.id = ApiSN.getInt("id");//armazendo o id do invocador. Exemplo no json ={\"id\" : \"id_do_invocador\"} 
+        this.level = ApiSN.getInt("summonerLevel");//armazendo o level do invocador. Exemplo no json ={\"summonerLeval\" : \"level_do_invocador\"} 
+        this.accountId = ApiSN.getInt("accountId");//armazendo o id da conta do invocador. Exemplo no json ={\"accountId\" : \"id_da_conta_do_invocador\"} 
         
+        //printa os dados que queremos
         System.out.println("--------Invocador---------");
         System.out.println("nome de invocador: "+nome);
         System.out.println("id do invocador: "+id);
         System.out.println("level do invocador: "+level);
         
-        
+        //instância as classes com os dados necessarios para outra api como parametros dos metodos construtores 
         BuscaMatches partida = new BuscaMatches(this.accountId,server);
         BuscaLiga elo = new BuscaLiga(this.id,server);
         

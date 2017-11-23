@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 public class BuscaMatches {
 
-    String lanes;
+    String lanes,champions;
     int top, jungle, mid, bottom = 0;
 
     BuscaMatches(int id, String server)throws MalformedURLException, IOException
@@ -28,7 +28,6 @@ public class BuscaMatches {
             JSONObject lane = ApiArrMCHs.getJSONObject(i);
             
             lanes = lane.getString("lane");
-            
             if ("TOP".equals(lanes)){
                 top += 1;
             }
