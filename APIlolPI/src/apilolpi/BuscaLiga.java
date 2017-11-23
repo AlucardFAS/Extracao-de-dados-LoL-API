@@ -48,12 +48,12 @@ public class BuscaLiga {
             queue = elo.getString("queueType");//armazendo o tipo da liga de vitorias do invocador. Exemplo no json ={\"queueType\" : \"RANKED_SOLO\"}
             
             //printa os dados que queremos
-            System.out.println(queue);
+            /*System.out.println(queue);
             System.out.println(tier+":"+rank+" -- "+ln);
             System.out.println("partidas vencidas: "+wins);
             System.out.println("partidas perdidas: "+losses);
             System.out.println("pontos: "+pdls);
-            System.out.println(" ");
+            System.out.println(" ");*/
             
            
         }

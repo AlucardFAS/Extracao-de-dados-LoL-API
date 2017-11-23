@@ -36,10 +36,9 @@ public class MostraInvocador extends javax.swing.JFrame{
         button2 = new java.awt.Button();
         button3 = new java.awt.Button();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         button1.setActionCommand("Buscar novo Invocador");
         button1.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
@@ -67,19 +66,6 @@ public class MostraInvocador extends javax.swing.JFrame{
         jLabel1.setText("Busque um Jogador");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,9 +84,7 @@ public class MostraInvocador extends javax.swing.JFrame{
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(460, 460, 460)
                         .addComponent(jSeparator1))))
         );
         layout.setVerticalGroup(
@@ -111,12 +95,9 @@ public class MostraInvocador extends javax.swing.JFrame{
                     .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -128,11 +109,13 @@ public class MostraInvocador extends javax.swing.JFrame{
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         
         BuscaJogador busca = new BuscaJogador();
+        BuscaMatches partida = null;
+        BuscaLiga elo = null;
         
         try {
             busca.BuscaJogador();
-            BuscaMatches partida = new BuscaMatches(busca.accountId,busca.server);
-            BuscaLiga elo = new BuscaLiga(busca.id,busca.server);
+            partida = new BuscaMatches(busca.accountId,busca.server);
+            elo = new BuscaLiga(busca.id,busca.server);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -143,8 +126,20 @@ public class MostraInvocador extends javax.swing.JFrame{
                 + "Invocador:  "+busca.nome+"<br/>"
                 + "ID:         "+busca.id+"<br/>"
                 + "Level:      "+busca.level+"<br/>"
-                + "<br/>------------------------ELO------------------------<br/>"
-                + "</body></html>");
+                + "<br/>-------------------------ELO-------------------------<br/><center>"
+                + elo.queue + "<center/><br/><left>"
+                + elo.tier + ":" + elo.rank + "--" + elo.ln + "<br/>"
+                + "Partidas vencidas: " + elo.wins + "<br/>"
+                + "Partidas perdidas: " + elo.losses + "<br/>"
+                + "Pontos: " + elo.pdls + "<br/><br/>"
+                + "-----------------------Partidas----------------------<br/>"
+                + "TOP: " + partida.top + "<br/>"
+                + "JUNGLE: " + partida.jungle + "<br/>"
+                + "MID: " + partida.mid + "<br/>"
+                + "BOT: " + partida.bottom + "<br/>"
+                +"</body></html>");
+        
+
         
     }//GEN-LAST:event_button1ActionPerformed
 
@@ -169,8 +164,6 @@ public class MostraInvocador extends javax.swing.JFrame{
     private java.awt.Button button2;
     private java.awt.Button button3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

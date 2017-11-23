@@ -41,12 +41,12 @@ public class BuscaMatches {
                 bottom += 1;
             }
         }
-        System.out.println("--------partidas---------");
+        /*System.out.println("--------partidas---------");
         System.out.println("jogos de TOP: "+top);
         System.out.println("jogos de JUNGLE: "+jungle);
         System.out.println("jogos de MID: "+mid);
         System.out.println("jogos no BOT: "+bottom);
-        System.out.println("--------Elo---------");
+        System.out.println("--------Elo---------");*/
     }
     
     

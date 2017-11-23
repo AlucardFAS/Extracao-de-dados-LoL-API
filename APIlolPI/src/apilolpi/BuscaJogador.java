@@ -43,10 +43,10 @@ public class BuscaJogador extends MostraInvocador {
         this.accountId = ApiSN.getInt("accountId");//armazendo o id da conta do invocador. Exemplo no json ={\"accountId\" : \"id_da_conta_do_invocador\"} 
         
         //printa os dados que queremos
-        System.out.println("--------Invocador---------");
+        /*System.out.println("--------Invocador---------");
         System.out.println("nome de invocador: "+nome);
         System.out.println("id do invocador: "+id);
-        System.out.println("level do invocador: "+level);
+        System.out.println("level do invocador: "+level);*/
         
         
         
