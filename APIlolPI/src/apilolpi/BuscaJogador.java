@@ -27,7 +27,7 @@ public class BuscaJogador {
         String server = JOptionPane.showInputDialog("Digite seu servidor");//caixa para armazenar o server
         
         //criando conexao com a API
-        URL lolApiName = new URL("https://"+server+"1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"+summonerName+"?api_key=RGAPI-a6039025-1302-445d-9b06-205b197b6ddc");//url da api com a chave para o acesso
+        URL lolApiName = new URL("https://"+server+"1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"+summonerName+"?api_key=RGAPI-9bcd74a7-e1b1-43ed-9a69-ed37973cd0b7");//url da api com a chave para o acesso
         
         //criando buffer para ler e armazenar todos os dados da api 
         BufferedReader readName = new BufferedReader(new InputStreamReader(lolApiName.openStream()));
