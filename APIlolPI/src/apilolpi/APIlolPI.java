@@ -11,11 +11,8 @@ public class APIlolPI {
     public static void main(String[] args)throws MalformedURLException, IOException{
         
         
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new InterfaceGrafica().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MostraInvocador().setVisible(true);
         });
 
     }
