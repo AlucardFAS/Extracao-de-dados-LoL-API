@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -19,12 +20,13 @@ import org.json.JSONObject;
  */
 public class BuscaLiga {
     
-    int wins,losses,pdls;
-    String ln,tier,rank,queue;
+    int wins,losses,pdls,wins2,losses2,pdls2;
+    int winrate;
+    String ln,tier,rank,queue,ln2,tier2,rank2,queue2;
     
     BuscaLiga (int id, String server) throws MalformedURLException, IOException {
         //criando conexao com a API
-        URL lolApiLigas = new URL("https://"+server+"1.api.riotgames.com/lol/league/v3/positions/by-summoner/"+id+"?api_key=RGAPI-9bcd74a7-e1b1-43ed-9a69-ed37973cd0b7");
+        URL lolApiLigas = new URL("https://"+server+"1.api.riotgames.com/lol/league/v3/positions/by-summoner/"+id+"?api_key=RGAPI-9f6b7394-cf1d-4866-a663-44b2bcb18633");
        
         //criando buffer para ler e armazenar todos os dados da api 
         BufferedReader readLeague = new BufferedReader(new InputStreamReader(lolApiLigas.openStream()));
@@ -38,21 +40,35 @@ public class BuscaLiga {
             
             /*Armazena nas variaveis apenas os dados que queremos trabalhar.
             No JSON pedimos para armazenar os dado que está em sequencia do nosso parametro*/
-            wins = elo.getInt("wins");//armazendo o número de vitorias do invocador. Exemplo no json ={\"wins\" : \"nº_vitorias\"}
-            losses = elo.getInt("losses");//armazendo o número de derrotas do invocador. Exemplo no json ={\"losses\" : \"nº_derrotas\"}
-            pdls = elo.getInt("leaguePoints");//armazendo os pontos do invocador. Exemplo no json ={\"leaguePoints\" : \"pontos\"}
+            if(i==0){
+                wins = elo.getInt("wins");//armazendo o número de vitorias do invocador. Exemplo no json ={\"wins\" : \"nº_vitorias\"}
+                losses = elo.getInt("losses");//armazendo o número de derrotas do invocador. Exemplo no json ={\"losses\" : \"nº_derrotas\"}
+                pdls = elo.getInt("leaguePoints");//armazendo os pontos do invocador. Exemplo no json ={\"leaguePoints\" : \"pontos\"}
             
-            ln = elo.getString("leagueName");//armazendo o nome da liga do invocador. Exemplo no json ={\"leagueName\" : \"nome\"}
-            tier = elo.getString("tier");//armazendo em qual camada da liga em que está o invocador. Exemplo no json ={\"tier\" : \"GOLD\"}
-            rank = elo.getString("rank");//armazendo o rank da liga em que está o invocador. Exemplo no json ={\"rank\" : \"III\"}
-            queue = elo.getString("queueType");//armazendo o tipo da liga de vitorias do invocador. Exemplo no json ={\"queueType\" : \"RANKED_SOLO\"}
+                ln = elo.getString("leagueName");//armazendo o nome da liga do invocador. Exemplo no json ={\"leagueName\" : \"nome\"}
+                tier = elo.getString("tier");//armazendo em qual camada da liga em que está o invocador. Exemplo no json ={\"tier\" : \"GOLD\"}
+                rank = elo.getString("rank");//armazendo o rank da liga em que está o invocador. Exemplo no json ={\"rank\" : \"III\"}
+                queue = elo.getString("queueType");//armazendo o tipo da liga de vitorias do invocador. Exemplo no json ={\"queueType\" : \"RANKED_SOLO\"}
+            }
+            if(i==1){
+                wins2 = elo.getInt("wins");//armazendo o número de vitorias do invocador. Exemplo no json ={\"wins\" : \"nº_vitorias\"}
+                losses2 = elo.getInt("losses");//armazendo o número de derrotas do invocador. Exemplo no json ={\"losses\" : \"nº_derrotas\"}
+                pdls2 = elo.getInt("leaguePoints");//armazendo os pontos do invocador. Exemplo no json ={\"leaguePoints\" : \"pontos\"}
+            
+                ln2 = elo.getString("leagueName");//armazendo o nome da liga do invocador. Exemplo no json ={\"leagueName\" : \"nome\"}
+                tier2 = elo.getString("tier");//armazendo em qual camada da liga em que está o invocador. Exemplo no json ={\"tier\" : \"GOLD\"}
+                rank2 = elo.getString("rank");//armazendo o rank da liga em que está o invocador. Exemplo no json ={\"rank\" : \"III\"}
+                queue2 = elo.getString("queueType");//armazendo o tipo da liga de vitorias do invocador. Exemplo no json ={\"queueType\" : \"RANKED_SOLO\"}
+             
+            }
+            
             
             //printa os dados que queremos
-            /*System.out.println(queue);
-            System.out.println(tier+":"+rank+" -- "+ln);
-            System.out.println("partidas vencidas: "+wins);
-            System.out.println("partidas perdidas: "+losses);
-            System.out.println("pontos: "+pdls);
+            /*System.out.println(Arrays.toString(queue));
+            System.out.println(Arrays.toString(tier)+":"+Arrays.toString(rank)+" -- "+Arrays.toString(ln));
+            System.out.println("partidas vencidas: "+Arrays.toString(wins));
+            System.out.println("partidas perdidas: "+Arrays.toString(losses));
+            System.out.println("pontos: "+Arrays.toString(pdls));
             System.out.println(" ");*/
             
            

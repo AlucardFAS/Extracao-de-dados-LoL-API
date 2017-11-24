@@ -26,7 +26,7 @@ public class BuscaJogador extends MostraInvocador {
         server = JOptionPane.showInputDialog("Digite seu servidor");//caixa para armazenar o server
         
         //criando conexao com a API
-        URL lolApiName = new URL("https://"+server+"1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"+summonerName+"?api_key=RGAPI-9bcd74a7-e1b1-43ed-9a69-ed37973cd0b7");//url da api com a chave para o acesso
+        URL lolApiName = new URL("https://"+server+"1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"+summonerName+"?api_key=RGAPI-9f6b7394-cf1d-4866-a663-44b2bcb18633");//url da api com a chave para o acesso
         
         //criando buffer para ler e armazenar todos os dados da api 
         BufferedReader readName = new BufferedReader(new InputStreamReader(lolApiName.openStream()));
@@ -89,8 +89,9 @@ public class BuscaJogador extends MostraInvocador {
 
         
         //instância as classes com os dados necessarios para outra api como parametros dos metodos construtores 
-        BuscaMatches partida = new BuscaMatches(this.accountId,server);
-        BuscaLiga elo = new BuscaLiga(this.id,server);
+        /*BuscaMatches partida = new BuscaMatches(this.accountId,server);
+        BuscaLiga elo = new BuscaLiga(this.id,server);*/
+        
         
     }
     

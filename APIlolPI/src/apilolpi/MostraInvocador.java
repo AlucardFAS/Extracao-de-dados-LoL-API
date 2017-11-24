@@ -80,7 +80,7 @@ public class MostraInvocador extends javax.swing.JFrame{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -94,11 +94,14 @@ public class MostraInvocador extends javax.swing.JFrame{
                     .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
                     .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 403, Short.MAX_VALUE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jLabel1.getAccessibleContext().setAccessibleName("invocadorMostra");
@@ -111,33 +114,45 @@ public class MostraInvocador extends javax.swing.JFrame{
         BuscaJogador busca = new BuscaJogador();
         BuscaMatches partida = null;
         BuscaLiga elo = null;
+        BuscaCampeao campeao = null;
         
         try {
             busca.BuscaJogador();
             partida = new BuscaMatches(busca.accountId,busca.server);
             elo = new BuscaLiga(busca.id,busca.server);
+            campeao = new BuscaCampeao(busca.server, busca.id);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel1.setText("<html><body>"
+            jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            jLabel1.setText("<html><body>"
                 + "---------------------Invocador---------------------<br/><br/>"
                 + "Invocador:  "+busca.nome+"<br/>"
                 + "ID:         "+busca.id+"<br/>"
                 + "Level:      "+busca.level+"<br/>"
+                + "Campeão principal: "+campeao.nomeCamp+"<br/>"
+                + "Nível de maestria: "+campeao.lvlMst+"    Pontos: "+campeao.mstPoints+"<br/>"     
                 + "<br/>-------------------------ELO-------------------------<br/><center>"
                 + elo.queue + "<center/><br/><left>"
-                + elo.tier + ":" + elo.rank + "--" + elo.ln + "<br/>"
+                + elo.tier + ":" + elo.rank+ "--" + elo.ln + "<br/>"
                 + "Partidas vencidas: " + elo.wins + "<br/>"
                 + "Partidas perdidas: " + elo.losses + "<br/>"
                 + "Pontos: " + elo.pdls + "<br/><br/>"
+                + elo.queue2 + "<center/><br/><left>"
+                + elo.tier2 + ":" + elo.rank2+ "--" + elo.ln2 + "<br/>"
+                + "Partidas vencidas: " + elo.wins2 + "<br/>"
+                + "Partidas perdidas: " + elo.losses2 + "<br/>"
+                + "Pontos: " + elo.pdls2 + "<br/><br/>"
                 + "-----------------------Partidas----------------------<br/>"
                 + "TOP: " + partida.top + "<br/>"
                 + "JUNGLE: " + partida.jungle + "<br/>"
                 + "MID: " + partida.mid + "<br/>"
                 + "BOT: " + partida.bottom + "<br/>"
+                  
                 +"</body></html>");
+        
+        
         
 
         
