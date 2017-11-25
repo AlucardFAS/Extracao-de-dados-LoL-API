@@ -197,12 +197,15 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         BuscaCampeao campeao = null;
         GerarGrafico grafico = new GerarGrafico();
         
+        
         try {
             busca.BuscaJogador();
             partida = new BuscaMatches(busca.accountId,busca.server,busca.key);
             elo = new BuscaLiga(busca.id,busca.server,busca.key);
             campeao = new BuscaCampeao(busca.server, busca.id,busca.key);
             grafico.graficoBarraJogador(partida.top, partida.jungle, partida.mid, partida.bottom, 1);
+            grafico.graficoPizzaLigaSolo(elo.wins, elo.losses, 1);
+            grafico.graficoPizzaLigaFlex(elo.wins2, elo.losses2, 1);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -245,6 +248,8 @@ public class MostraInvocador1 extends javax.swing.JFrame{
             partida2 = new BuscaMatches(busca2.accountId, busca2.server, busca2.key);
             campeao2 = new BuscaCampeao(busca2.server, busca2.id, busca2.key);
             grafico2.graficoBarraJogador(partida2.top, partida2.jungle, partida2.mid, partida2.bottom, 2);
+            grafico2.graficoPizzaLigaSolo(elo2.wins, elo2.losses, 2);
+            grafico2.graficoPizzaLigaFlex(elo2.wins2, elo2.losses2, 2);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }

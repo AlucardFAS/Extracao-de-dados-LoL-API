@@ -14,6 +14,8 @@ import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultKeyedValuesDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -41,6 +43,40 @@ public class GerarGrafico {
         }
     }
     
+    public void graficoPizzaLigaSolo (int wins, int losses,int identify) throws FileNotFoundException, IOException{
+        DefaultPieDataset graficoPizza = new DefaultKeyedValuesDataset();
+        
+        graficoPizza.setValue("vitorias", wins);
+        graficoPizza.setValue("derrotas", losses);
+        
+        JFreeChart grafico = ChartFactory.createPieChart("Rate SoloQueue", graficoPizza, true, true, false);
+        
+        if (identify == 1) {
+            OutputStream arquivo = new FileOutputStream("grafico_pizza_solo_j1.png");
+            ChartUtilities.writeChartAsPNG(arquivo, grafico, 550, 400);
+        }
+        if (identify == 2) {
+            OutputStream arquivo = new FileOutputStream("grafico_pizza_solo_j2.png");
+            ChartUtilities.writeChartAsPNG(arquivo, grafico, 550, 400);
+        }
+        
+    }
     
-    
+    public void graficoPizzaLigaFlex (int wins, int losses,int identify) throws FileNotFoundException, IOException{
+        DefaultPieDataset graficoPizza = new DefaultKeyedValuesDataset();
+        
+        graficoPizza.setValue("vitorias", wins);
+        graficoPizza.setValue("derrotas", losses);
+        
+        JFreeChart grafico = ChartFactory.createPieChart("Rate FLEX", graficoPizza, true, true, false);
+        
+        if (identify == 1) {
+            OutputStream arquivo = new FileOutputStream("grafico_pizza_flex_j1.png");
+            ChartUtilities.writeChartAsPNG(arquivo, grafico, 550, 400);
+        }
+        if (identify == 2) {
+            OutputStream arquivo = new FileOutputStream("grafico_pizza_flex_j2.png");
+            ChartUtilities.writeChartAsPNG(arquivo, grafico, 550, 400);
+        }
+    }
 }
