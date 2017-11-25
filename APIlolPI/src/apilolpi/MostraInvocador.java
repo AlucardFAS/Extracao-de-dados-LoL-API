@@ -36,7 +36,13 @@ public class MostraInvocador extends javax.swing.JFrame{
         button2 = new java.awt.Button();
         button3 = new java.awt.Button();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -64,11 +70,49 @@ public class MostraInvocador extends javax.swing.JFrame{
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Busque um invocador");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jTextField1.setEditable(false);
+        jTextField1.setFont(new java.awt.Font("Myanmar Text", 1, 40)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("INVOCADOR");
+        jTextField1.setSelectedTextColor(new java.awt.Color(0, 0, 204));
+
+        jTextField2.setEditable(false);
+        jTextField2.setFont(new java.awt.Font("Myanmar Text", 1, 40)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.setText("ELO");
+        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
+        jTextField2.setSelectedTextColor(new java.awt.Color(0, 0, 204));
+
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("-");
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jTextField3.setEditable(false);
+        jTextField3.setFont(new java.awt.Font("Myanmar Text", 1, 40)); // NOI18N
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField3.setText("INVOCADOR");
+        jTextField3.setSelectedTextColor(new java.awt.Color(0, 0, 204));
+
+        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Busque um invocador");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jTextField4.setEditable(false);
+        jTextField4.setFont(new java.awt.Font("Myanmar Text", 1, 40)); // NOI18N
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField4.setText("ELO");
+        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
+        jTextField4.setSelectedTextColor(new java.awt.Color(0, 0, 204));
+
+        jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("-");
+        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,36 +121,67 @@ public class MostraInvocador extends javax.swing.JFrame{
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(460, 460, 460)
+                        .addGap(1270, 1270, 1270)
                         .addComponent(jSeparator1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addContainerGap())))))
+                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(95, 95, 95)
+                                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(95, 95, 95)
+                                .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField2)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                    .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(button1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -120,7 +195,7 @@ public class MostraInvocador extends javax.swing.JFrame{
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         
-        BuscaJogador busca = new BuscaJogador();
+        /*BuscaJogador busca = new BuscaJogador();
         BuscaMatches partida = null;
         BuscaLiga elo = null;
         BuscaCampeao campeao = null;
@@ -132,30 +207,22 @@ public class MostraInvocador extends javax.swing.JFrame{
             campeao = new BuscaCampeao(busca.server, busca.id,busca.key);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
         
             jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
             jLabel1.setText("<html><body>"
-                + "---------------------Invocador---------------------<br/><br/>"
-                + "Invocador:  "+busca.nome+"<br/>"
-                + "Level:      "+busca.level+"<br/>"
-                + "Campeão principal: "+campeao.nomeCamp+"<br/>"
-                + "Nível de maestria: "+campeao.lvlMst+"    Pontos: "+campeao.mstPoints+"<br/>"     
-                + "<br/>-------------------------ELO-------------------------<br/><center>"
-                + elo.queue + "<center/><br/><left>"
-                + elo.tier + ":" + elo.rank+ "--" + elo.ln + "<br/>"
-                + "Pontos: " + elo.pdls + "<br/><br/>"
-                + elo.queue2 + "<center/><br/><left>"
-                + elo.tier2 + ":" + elo.rank2+ "--" + elo.ln2 + "<br/>"
-                + "Pontos: " + elo.pdls2 + "<br/><br/>"
-                + "-----------------------Partidas----------------------<br/>"
-                + "TOP: " + partida.top + "<br/>"
-                + "JUNGLE: " + partida.jungle + "<br/>"
-                + "MID: " + partida.mid + "<br/>"
-                + "BOT: " + partida.bottom + "<br/>"
-                  
+                + "Level:      <br/>"
+                + "Campeão principal: <br/>"
+                + "Nível de maestria:    Pontos: <br/>"       
                 +"</body></html>");
-        
+            jLabel3.setText("<html><body>"
+                + ":" +  "--" + "<br/>"
+                + "Pontos: " + "<br/><br/>"
+                +  "<center/><br/><left>"
+                +  ":" +  "--" +  "<br/>"
+                + "Pontos: " +  "<br/><br/>"
+                +"</body></html>"
+                );
         
         
 
@@ -163,7 +230,7 @@ public class MostraInvocador extends javax.swing.JFrame{
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        BuscaJogador busca2 = new BuscaJogador();
+        /*BuscaJogador busca2 = new BuscaJogador();
         BuscaCampeao campeao2 = null;
         BuscaLiga elo2 = null;
         BuscaMatches partida2 = null;
@@ -176,28 +243,22 @@ public class MostraInvocador extends javax.swing.JFrame{
             campeao2 = new BuscaCampeao(busca2.server, busca2.id, busca2.key);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-            jLabel2.setText("<html><body>"
-                + "---------------------Invocador---------------------<br/><br/>"
-                + "Invocador:  "+busca2.nome+"<br/>"
-                + "Level:      "+busca2.level+"<br/>"
-                + "Campeão principal: "+campeao2.nomeCamp+"<br/>"
-                + "Nível de maestria: "+campeao2.lvlMst+"    Pontos: "+campeao2.mstPoints+"<br/>"     
-                + "<br/>-------------------------ELO-------------------------<br/><center>"
-                + elo2.queue + "<center/><br/><left>"
-                + elo2.tier + ":" + elo2.rank+ "--" + elo2.ln + "<br/>"
-                + "Pontos: " + elo2.pdls + "<br/><br/>"
-                + elo2.queue2 + "<center/><br/><left>"
-                + elo2.tier2 + ":" + elo2.rank2+ "--" + elo2.ln2 + "<br/>"
-                + "Pontos: " + elo2.pdls2 + "<br/><br/>"
-                + "-----------------------Partidas----------------------<br/>"
-                + "TOP: " + partida2.top + "<br/>"
-                + "JUNGLE: " + partida2.jungle + "<br/>"
-                + "MID: " + partida2.mid + "<br/>"
-                + "BOT: " + partida2.bottom + "<br/>"
-                  
+        }*/
+
+            jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+            jLabel4.setText("<html><body><alignleft>"
+                + ":Level<br/>"
+                + ":Campeão principal<br/>"
+                + ":Pontos  :Nível de maestria<br/>"       
                 +"</body></html>");
+            jLabel5.setText("<html><body>"
+                + ":" +  "--" + "<br/>"
+                + ":Pontos" + "<br/><br/>"
+                +  "<center/><br/><left>"
+                +  ":" +  "--" +  "<br/>"
+                + ":Pontos" +  "<br/><br/>"
+                +"</body></html>"
+                );
     }//GEN-LAST:event_button3ActionPerformed
 
     /**
@@ -210,7 +271,13 @@ public class MostraInvocador extends javax.swing.JFrame{
     private java.awt.Button button2;
     private java.awt.Button button3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
