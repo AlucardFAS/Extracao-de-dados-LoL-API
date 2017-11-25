@@ -24,9 +24,9 @@ public class BuscaLiga {
     int winrate;
     String ln,tier,rank,queue,ln2,tier2,rank2,queue2;
     
-    BuscaLiga (int id, String server) throws MalformedURLException, IOException {
+    BuscaLiga (int id, String server, String key) throws MalformedURLException, IOException {
         //criando conexao com a API
-        URL lolApiLigas = new URL("https://"+server+"1.api.riotgames.com/lol/league/v3/positions/by-summoner/"+id+"?api_key=RGAPI-9f6b7394-cf1d-4866-a663-44b2bcb18633");
+        URL lolApiLigas = new URL("https://"+server+"1.api.riotgames.com/lol/league/v3/positions/by-summoner/"+id+"?api_key="+key);
        
         //criando buffer para ler e armazenar todos os dados da api 
         BufferedReader readLeague = new BufferedReader(new InputStreamReader(lolApiLigas.openStream()));

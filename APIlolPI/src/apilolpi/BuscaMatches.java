@@ -14,9 +14,9 @@ public class BuscaMatches {
     String lanes,champions;
     int top, jungle, mid, bottom = 0;
 
-    BuscaMatches(int id, String server)throws MalformedURLException, IOException
+    BuscaMatches(int id, String server, String key)throws MalformedURLException, IOException
     {
-        URL lolApiMatches = new URL("https://"+server+"1.api.riotgames.com/lol/match/v3/matchlists/by-account/"+id+"?api_key=RGAPI-9f6b7394-cf1d-4866-a663-44b2bcb18633");
+        URL lolApiMatches = new URL("https://"+server+"1.api.riotgames.com/lol/match/v3/matchlists/by-account/"+id+"?api_key="+key);
         BufferedReader readMatches = new BufferedReader(new InputStreamReader(lolApiMatches.openStream()));
         String lerApi2 = readMatches.readLine();
         

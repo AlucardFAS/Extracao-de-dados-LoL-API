@@ -22,10 +22,10 @@ public class BuscaCampeao {
     String nomeCamp;
     int lvlMst, mstPoints, championId;
 
-    BuscaCampeao(String server, int sId) throws MalformedURLException, IOException {
+    BuscaCampeao(String server, int sId, String key) throws MalformedURLException, IOException {
         
         //criando conexao com a API
-        URL lolApiChampionMsr = new URL("https://"+server+"1.api.riotgames.com/lol/champion-mastery/v3/champion-masteries/by-summoner/"+sId+"?api_key=RGAPI-9f6b7394-cf1d-4866-a663-44b2bcb18633");
+        URL lolApiChampionMsr = new URL("https://"+server+"1.api.riotgames.com/lol/champion-mastery/v3/champion-masteries/by-summoner/"+sId+"?api_key="+key);
         
         //criando buffer para ler e armazenar todos os dados da api 
         BufferedReader readChampMast = new BufferedReader(new InputStreamReader(lolApiChampionMsr.openStream()));
@@ -45,7 +45,7 @@ public class BuscaCampeao {
         }
         
         
-        URL lolApiChampion = new URL("https://"+server+"1.api.riotgames.com/lol/static-data/v3/champions/"+championId+"?locale=en_US&api_key=RGAPI-9f6b7394-cf1d-4866-a663-44b2bcb18633");
+        URL lolApiChampion = new URL("https://"+server+"1.api.riotgames.com/lol/static-data/v3/champions/"+championId+"?locale=en_US&api_key="+key);
         
         BufferedReader readChampions = new BufferedReader(new InputStreamReader(lolApiChampion.openStream()));
         String lerApi4 = readChampions.readLine();

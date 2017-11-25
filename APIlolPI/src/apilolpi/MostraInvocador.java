@@ -127,9 +127,9 @@ public class MostraInvocador extends javax.swing.JFrame{
         
         try {
             busca.BuscaJogador();
-            partida = new BuscaMatches(busca.accountId,busca.server);
-            elo = new BuscaLiga(busca.id,busca.server);
-            campeao = new BuscaCampeao(busca.server, busca.id);
+            partida = new BuscaMatches(busca.accountId,busca.server,busca.key);
+            elo = new BuscaLiga(busca.id,busca.server,busca.key);
+            campeao = new BuscaCampeao(busca.server, busca.id,busca.key);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -144,13 +144,9 @@ public class MostraInvocador extends javax.swing.JFrame{
                 + "<br/>-------------------------ELO-------------------------<br/><center>"
                 + elo.queue + "<center/><br/><left>"
                 + elo.tier + ":" + elo.rank+ "--" + elo.ln + "<br/>"
-                + "Partidas vencidas: " + elo.wins + "<br/>"
-                + "Partidas perdidas: " + elo.losses + "<br/>"
                 + "Pontos: " + elo.pdls + "<br/><br/>"
                 + elo.queue2 + "<center/><br/><left>"
                 + elo.tier2 + ":" + elo.rank2+ "--" + elo.ln2 + "<br/>"
-                + "Partidas vencidas: " + elo.wins2 + "<br/>"
-                + "Partidas perdidas: " + elo.losses2 + "<br/>"
                 + "Pontos: " + elo.pdls2 + "<br/><br/>"
                 + "-----------------------Partidas----------------------<br/>"
                 + "TOP: " + partida.top + "<br/>"
@@ -175,9 +171,9 @@ public class MostraInvocador extends javax.swing.JFrame{
         //BuscaJogador buscaEmMostra = new BuscaJogador();
         try {
             busca2.BuscaJogador();
-            elo2 = new BuscaLiga(busca2.id,busca2.server);
-            partida2 = new BuscaMatches(busca2.accountId, busca2.server);
-            campeao2 = new BuscaCampeao(busca2.server, busca2.id);
+            elo2 = new BuscaLiga(busca2.id,busca2.server, busca2.key);
+            partida2 = new BuscaMatches(busca2.accountId, busca2.server, busca2.key);
+            campeao2 = new BuscaCampeao(busca2.server, busca2.id, busca2.key);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -191,13 +187,9 @@ public class MostraInvocador extends javax.swing.JFrame{
                 + "<br/>-------------------------ELO-------------------------<br/><center>"
                 + elo2.queue + "<center/><br/><left>"
                 + elo2.tier + ":" + elo2.rank+ "--" + elo2.ln + "<br/>"
-                + "Partidas vencidas: " + elo2.wins + "<br/>"
-                + "Partidas perdidas: " + elo2.losses + "<br/>"
                 + "Pontos: " + elo2.pdls + "<br/><br/>"
                 + elo2.queue2 + "<center/><br/><left>"
                 + elo2.tier2 + ":" + elo2.rank2+ "--" + elo2.ln2 + "<br/>"
-                + "Partidas vencidas: " + elo2.wins2 + "<br/>"
-                + "Partidas perdidas: " + elo2.losses2 + "<br/>"
                 + "Pontos: " + elo2.pdls2 + "<br/><br/>"
                 + "-----------------------Partidas----------------------<br/>"
                 + "TOP: " + partida2.top + "<br/>"
