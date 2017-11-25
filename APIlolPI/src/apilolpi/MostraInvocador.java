@@ -36,6 +36,7 @@ public class MostraInvocador extends javax.swing.JFrame{
         button2 = new java.awt.Button();
         button3 = new java.awt.Button();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -63,8 +64,11 @@ public class MostraInvocador extends javax.swing.JFrame{
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Busque um Jogador");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,12 +84,16 @@ public class MostraInvocador extends javax.swing.JFrame{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(460, 460, 460)
+                        .addComponent(jSeparator1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(460, 460, 460)
-                        .addComponent(jSeparator1))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addContainerGap())))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,15 +104,16 @@ public class MostraInvocador extends javax.swing.JFrame{
                     .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 403, Short.MAX_VALUE)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jLabel1.getAccessibleContext().setAccessibleName("invocadorMostra");
+
+        getAccessibleContext().setAccessibleParent(this);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -129,7 +138,6 @@ public class MostraInvocador extends javax.swing.JFrame{
             jLabel1.setText("<html><body>"
                 + "---------------------Invocador---------------------<br/><br/>"
                 + "Invocador:  "+busca.nome+"<br/>"
-                + "ID:         "+busca.id+"<br/>"
                 + "Level:      "+busca.level+"<br/>"
                 + "Campeão principal: "+campeao.nomeCamp+"<br/>"
                 + "Nível de maestria: "+campeao.lvlMst+"    Pontos: "+campeao.mstPoints+"<br/>"     
@@ -159,14 +167,45 @@ public class MostraInvocador extends javax.swing.JFrame{
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        BuscaJogador Comparar = new BuscaJogador();
+        BuscaJogador busca2 = new BuscaJogador();
+        BuscaCampeao campeao2 = null;
+        BuscaLiga elo2 = null;
+        BuscaMatches partida2 = null;
         
-        BuscaJogador buscaEmMostra = new BuscaJogador();
+        //BuscaJogador buscaEmMostra = new BuscaJogador();
         try {
-            Comparar.BuscaCompara();
+            busca2.BuscaJogador();
+            elo2 = new BuscaLiga(busca2.id,busca2.server);
+            partida2 = new BuscaMatches(busca2.accountId, busca2.server);
+            campeao2 = new BuscaCampeao(busca2.server, busca2.id);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }
+            jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+            jLabel2.setText("<html><body>"
+                + "---------------------Invocador---------------------<br/><br/>"
+                + "Invocador:  "+busca2.nome+"<br/>"
+                + "Level:      "+busca2.level+"<br/>"
+                + "Campeão principal: "+campeao2.nomeCamp+"<br/>"
+                + "Nível de maestria: "+campeao2.lvlMst+"    Pontos: "+campeao2.mstPoints+"<br/>"     
+                + "<br/>-------------------------ELO-------------------------<br/><center>"
+                + elo2.queue + "<center/><br/><left>"
+                + elo2.tier + ":" + elo2.rank+ "--" + elo2.ln + "<br/>"
+                + "Partidas vencidas: " + elo2.wins + "<br/>"
+                + "Partidas perdidas: " + elo2.losses + "<br/>"
+                + "Pontos: " + elo2.pdls + "<br/><br/>"
+                + elo2.queue2 + "<center/><br/><left>"
+                + elo2.tier2 + ":" + elo2.rank2+ "--" + elo2.ln2 + "<br/>"
+                + "Partidas vencidas: " + elo2.wins2 + "<br/>"
+                + "Partidas perdidas: " + elo2.losses2 + "<br/>"
+                + "Pontos: " + elo2.pdls2 + "<br/><br/>"
+                + "-----------------------Partidas----------------------<br/>"
+                + "TOP: " + partida2.top + "<br/>"
+                + "JUNGLE: " + partida2.jungle + "<br/>"
+                + "MID: " + partida2.mid + "<br/>"
+                + "BOT: " + partida2.bottom + "<br/>"
+                  
+                +"</body></html>");
     }//GEN-LAST:event_button3ActionPerformed
 
     /**
@@ -179,6 +218,7 @@ public class MostraInvocador extends javax.swing.JFrame{
     private java.awt.Button button2;
     private java.awt.Button button3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

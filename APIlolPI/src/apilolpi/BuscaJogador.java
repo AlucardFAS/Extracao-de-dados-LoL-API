@@ -51,8 +51,8 @@ public class BuscaJogador extends MostraInvocador {
         
         
         //instância as classes com os dados necessarios para outra api como parametros dos metodos construtores 
-        BuscaMatches partida = new BuscaMatches(this.accountId,server);
-        BuscaLiga elo = new BuscaLiga(this.id,server);
+        //BuscaMatches partida = new BuscaMatches(this.accountId,server);
+        //BuscaLiga elo = new BuscaLiga(this.id,server);
         
     }
     
@@ -60,7 +60,7 @@ public class BuscaJogador extends MostraInvocador {
     
     
     
-    protected void BuscaCompara () throws MalformedURLException, IOException{
+   /* protected void BuscaCompara () throws MalformedURLException, IOException{
         String summonerName = JOptionPane.showInputDialog("Digite o nome do invocador");//crianda caixa de texto para armazenar nome do invocador
         String server = JOptionPane.showInputDialog("Digite o servidor");//caixa para armazenar o server
         
@@ -76,7 +76,7 @@ public class BuscaJogador extends MostraInvocador {
         
         /*Armazena nas variaveis apenas os dados que queremos trabalhar.
         No JSON pedimos para armazenar os dado que está em sequencia do nosso parametro*/
-        this.nome = ApiSN.getString("name");//armazendo o nome do invocador. Exemplo no json ={\"name\" : \"nome_do_invocador\"} 
+        /*this.nome = ApiSN.getString("name");//armazendo o nome do invocador. Exemplo no json ={\"name\" : \"nome_do_invocador\"} 
         this.id = ApiSN.getInt("id");//armazendo o id do invocador. Exemplo no json ={\"id\" : \"id_do_invocador\"} 
         this.level = ApiSN.getInt("summonerLevel");//armazendo o level do invocador. Exemplo no json ={\"summonerLeval\" : \"level_do_invocador\"} 
         this.accountId = ApiSN.getInt("accountId");//armazendo o id da conta do invocador. Exemplo no json ={\"accountId\" : \"id_da_conta_do_invocador\"} 
@@ -85,7 +85,7 @@ public class BuscaJogador extends MostraInvocador {
         System.out.println("--------Invocador---------");
         System.out.println("nome de invocador: "+nome);
         System.out.println("id do invocador: "+id);
-        System.out.println("level do invocador: "+level);
+        System.out.println("level do invocador: "+level);*/
 
         
         //instância as classes com os dados necessarios para outra api como parametros dos metodos construtores 
@@ -93,7 +93,7 @@ public class BuscaJogador extends MostraInvocador {
         BuscaLiga elo = new BuscaLiga(this.id,server);*/
         
         
-    }
+    //}
     
     
     
