@@ -45,7 +45,7 @@ public class BuscaCampeao {
         }
         
         
-        URL lolApiChampion = new URL("https://"+server+"1.api.riotgames.com/lol/static-data/v3/champions/"+championId+"?locale=en_US&api_key="+key);
+        URL lolApiChampion = new URL("https://"+server+"1.api.riotgames.com/lol/static-data/v3/champions/"+championId+"?locale=pt_BR&api_key="+key);
         
         BufferedReader readChampions = new BufferedReader(new InputStreamReader(lolApiChampion.openStream()));
         String lerApi4 = readChampions.readLine();

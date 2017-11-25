@@ -12,7 +12,7 @@ public class APIlolPI {
         
         
         java.awt.EventQueue.invokeLater(() -> {
-            new MostraInvocador().setVisible(true);
+            new MostraInvocador1().setVisible(true);
         });
 
     }

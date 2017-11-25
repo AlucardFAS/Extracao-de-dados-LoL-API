@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 public class BuscaMatches {
 
-    String lanes,champions;
+    String lanes;
     int top, jungle, mid, bottom = 0;
 
     BuscaMatches(int id, String server, String key)throws MalformedURLException, IOException
@@ -41,6 +41,7 @@ public class BuscaMatches {
                 bottom += 1;
             }
         }
+        
         /*System.out.println("--------partidas---------");
         System.out.println("jogos de TOP: "+top);
         System.out.println("jogos de JUNGLE: "+jungle);
