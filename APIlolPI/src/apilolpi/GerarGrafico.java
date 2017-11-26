@@ -34,12 +34,12 @@ public class GerarGrafico {
         JFreeChart grafico = ChartFactory.createBarChart("% de jogos por lane", "lane", "%", graficoBarra1,PlotOrientation.VERTICAL,false,true,false);
         
         if(identfy == 1){
-            OutputStream arquivo = new FileOutputStream("grafico_barra_j1.png");
-            ChartUtilities.writeChartAsPNG(arquivo, grafico, 550, 400);
+            OutputStream arquivo = new FileOutputStream("src/img/grafico_barra_j1.png");
+            ChartUtilities.writeChartAsPNG(arquivo, grafico, 415, 260);
         }
         if (identfy == 2) {
-            OutputStream arquivo = new FileOutputStream("grafico_barra_j2.png");
-            ChartUtilities.writeChartAsPNG(arquivo, grafico, 550, 400);
+            OutputStream arquivo = new FileOutputStream("src/img/grafico_barra_j2.png");
+            ChartUtilities.writeChartAsPNG(arquivo, grafico, 415, 260);
         }
     }
     
@@ -52,11 +52,11 @@ public class GerarGrafico {
         JFreeChart grafico = ChartFactory.createPieChart("Rate SoloQueue", graficoPizza, true, true, false);
         
         if (identify == 1) {
-            OutputStream arquivo = new FileOutputStream("grafico_pizza_solo_j1.png");
+            OutputStream arquivo = new FileOutputStream("src/img/grafico_pizza_solo_j1.png");
             ChartUtilities.writeChartAsPNG(arquivo, grafico, 550, 400);
         }
         if (identify == 2) {
-            OutputStream arquivo = new FileOutputStream("grafico_pizza_solo_j2.png");
+            OutputStream arquivo = new FileOutputStream("src/img/grafico_pizza_solo_j2.png");
             ChartUtilities.writeChartAsPNG(arquivo, grafico, 550, 400);
         }
         
@@ -71,11 +71,11 @@ public class GerarGrafico {
         JFreeChart grafico = ChartFactory.createPieChart("Rate FLEX", graficoPizza, true, true, false);
         
         if (identify == 1) {
-            OutputStream arquivo = new FileOutputStream("grafico_pizza_flex_j1.png");
+            OutputStream arquivo = new FileOutputStream("src/img/grafico_pizza_flex_j1.png");
             ChartUtilities.writeChartAsPNG(arquivo, grafico, 550, 400);
         }
         if (identify == 2) {
-            OutputStream arquivo = new FileOutputStream("grafico_pizza_flex_j2.png");
+            OutputStream arquivo = new FileOutputStream("src/img/grafico_pizza_flex_j2.png");
             ChartUtilities.writeChartAsPNG(arquivo, grafico, 550, 400);
         }
     }

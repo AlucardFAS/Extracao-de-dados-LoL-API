@@ -19,8 +19,8 @@ public class MostraInvocador1 extends javax.swing.JFrame{
     
     public MostraInvocador1() {
         initComponents();
-        
-    }
+        setSize(1363,733);
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,9 +43,17 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         jLabel4 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        labelFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 204, 204));
         setResizable(false);
+        getContentPane().setLayout(null);
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(1334, 731, 29, 2);
 
         button1.setActionCommand("Buscar novo Invocador");
         button1.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
@@ -56,9 +64,13 @@ public class MostraInvocador1 extends javax.swing.JFrame{
                 button1ActionPerformed(evt);
             }
         });
+        getContentPane().add(button1);
+        button1.setBounds(10, 11, 415, 77);
 
         button2.setFont(new java.awt.Font("BankGothic Md BT", 1, 18)); // NOI18N
         button2.setLabel("Gerar Gráficos");
+        getContentPane().add(button2);
+        button2.setBounds(435, 11, 493, 77);
 
         button3.setFont(new java.awt.Font("BankGothic Md BT", 1, 20)); // NOI18N
         button3.setLabel("Comparar Invocador");
@@ -67,17 +79,25 @@ public class MostraInvocador1 extends javax.swing.JFrame{
                 button3ActionPerformed(evt);
             }
         });
+        getContentPane().add(button3);
+        button3.setBounds(938, 11, 415, 77);
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Busque um invocador");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, 158, 415, 68);
+        jLabel1.getAccessibleContext().setAccessibleName("invocadorMostra");
 
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Myanmar Text", 1, 40)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("INVOCADOR");
         jTextField1.setSelectedTextColor(new java.awt.Color(0, 0, 204));
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(10, 98, 415, 54);
 
         jTextField2.setEditable(false);
         jTextField2.setFont(new java.awt.Font("Myanmar Text", 1, 40)); // NOI18N
@@ -85,22 +105,32 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         jTextField2.setText("ELO");
         jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jTextField2.setSelectedTextColor(new java.awt.Color(0, 0, 204));
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(10, 232, 415, 54);
 
         jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("-");
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(10, 292, 415, 168);
 
         jTextField3.setEditable(false);
         jTextField3.setFont(new java.awt.Font("Myanmar Text", 1, 40)); // NOI18N
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField3.setText("INVOCADOR");
         jTextField3.setSelectedTextColor(new java.awt.Color(0, 0, 204));
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(938, 98, 415, 54);
 
         jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Busque um invocador");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(938, 158, 415, 68);
 
         jTextField4.setEditable(false);
         jTextField4.setFont(new java.awt.Font("Myanmar Text", 1, 40)); // NOI18N
@@ -108,81 +138,26 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         jTextField4.setText("ELO");
         jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 204)));
         jTextField4.setSelectedTextColor(new java.awt.Color(0, 0, 204));
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(938, 232, 415, 54);
 
         jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("-");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(938, 292, 415, 168);
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(10, 466, 415, 259);
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(10, 11, 415, 259);
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(938, 466, 415, 259);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1270, 1270, 1270)
-                        .addComponent(jSeparator1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(95, 95, 95)
-                                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(95, 95, 95)
-                                .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addContainerGap())))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(button1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jLabel1.getAccessibleContext().setAccessibleName("invocadorMostra");
+        labelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_lol/wpp/wpp.jpg"))); // NOI18N
+        getContentPane().add(labelFundo);
+        labelFundo.setBounds(0, 0, 1360, 730);
 
         getAccessibleContext().setAccessibleParent(this);
 
@@ -228,9 +203,7 @@ public class MostraInvocador1 extends javax.swing.JFrame{
                 + "Pontos: " +elo.pdls2+ "<br/><br/>"
                 +"</body></html>"
                 );
-        
-        
-
+            jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/grafico_barra_j1.png")));
         
     }//GEN-LAST:event_button1ActionPerformed
 
@@ -254,10 +227,10 @@ public class MostraInvocador1 extends javax.swing.JFrame{
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }
             
-            jTextField3.setText("<html><body><center/>"+busca2.nome+"<body/><html/>");
+            jTextField3.setText(busca2.nome);
             
             jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-            jLabel4.setText("<html><body><alignleft>"
+            jLabel4.setText("<html><body><right>"
                 + "Level: "+busca2.level+"<br/>"
                 + "Campeão principal: "+campeao2.nomeCamp+"<br/>"
                 + "Nível de maestria: "+campeao2.lvlMst+"   Pontos: "+campeao2.mstPoints+"<br/>"       
@@ -272,6 +245,7 @@ public class MostraInvocador1 extends javax.swing.JFrame{
                 + "Pontos: " +elo2.pdls2+ "<br/><br/>"
                 +"</body></html>"
                 );
+            jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/grafico_barra_j2.png")));
     }//GEN-LAST:event_button3ActionPerformed
 
     /**
@@ -284,13 +258,17 @@ public class MostraInvocador1 extends javax.swing.JFrame{
     private java.awt.Button button2;
     private java.awt.Button button3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel labelFundo;
     // End of variables declaration//GEN-END:variables
 }
