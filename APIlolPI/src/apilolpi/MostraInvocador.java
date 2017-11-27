@@ -142,7 +142,7 @@ public class MostraInvocador extends javax.swing.JFrame{
         BuscaMatches partida = null;
         BuscaLiga elo = null;
         BuscaCampeao campeao = null;
-        GerarGrafico grafico = new GerarGrafico();
+        //GerarGrafico grafico = new GerarGrafico();
         
         
         try {
@@ -150,7 +150,7 @@ public class MostraInvocador extends javax.swing.JFrame{
             partida = new BuscaMatches(busca.accountId,busca.server,busca.key);
             elo = new BuscaLiga(busca.id,busca.server,busca.key);
             campeao = new BuscaCampeao(busca.server, busca.id,busca.key);
-            grafico.graficoBarraJogador(partida.top, partida.jungle, partida.mid, partida.bottom, 1);
+            //grafico.graficoBarraJogador(partida.top, partida.jungle, partida.mid, partida.bottom, 1);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -188,7 +188,7 @@ public class MostraInvocador extends javax.swing.JFrame{
         BuscaCampeao campeao2 = null;
         BuscaLiga elo2 = null;
         BuscaMatches partida2 = null;
-        GerarGrafico grafico2 = new GerarGrafico();
+        //GerarGrafico grafico2 = new GerarGrafico();
         
         //BuscaJogador buscaEmMostra = new BuscaJogador();
         try {
@@ -196,7 +196,7 @@ public class MostraInvocador extends javax.swing.JFrame{
             elo2 = new BuscaLiga(busca2.id,busca2.server, busca2.key);
             partida2 = new BuscaMatches(busca2.accountId, busca2.server, busca2.key);
             campeao2 = new BuscaCampeao(busca2.server, busca2.id, busca2.key);
-            grafico2.graficoBarraJogador(partida2.top, partida2.jungle, partida2.mid, partida2.bottom, 2);
+//            grafico2.graficoBarraJogador(partida2.top, partida2.jungle, partida2.mid, partida2.bottom, 2);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }

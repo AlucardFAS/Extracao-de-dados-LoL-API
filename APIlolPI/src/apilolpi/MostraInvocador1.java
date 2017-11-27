@@ -137,6 +137,12 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        jToggleButton4 = new javax.swing.JToggleButton();
+        jToggleButton5 = new javax.swing.JToggleButton();
+        jToggleButton6 = new javax.swing.JToggleButton();
         labelFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -250,6 +256,41 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 480, 416, 261);
 
+        jToggleButton1.setText("Gráfico Z");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jToggleButton1);
+        jToggleButton1.setBounds(430, 580, 250, 50);
+        jToggleButton1.getAccessibleContext().setAccessibleName("");
+
+        jToggleButton2.setText("Gráfico X");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jToggleButton2);
+        jToggleButton2.setBounds(430, 480, 250, 50);
+
+        jToggleButton3.setText("Gráfico X");
+        getContentPane().add(jToggleButton3);
+        jToggleButton3.setBounds(690, 480, 250, 50);
+
+        jToggleButton4.setText("Gráfico Y");
+        getContentPane().add(jToggleButton4);
+        jToggleButton4.setBounds(690, 530, 250, 50);
+
+        jToggleButton5.setText("Gráfico Z");
+        getContentPane().add(jToggleButton5);
+        jToggleButton5.setBounds(690, 580, 250, 50);
+
+        jToggleButton6.setText("Gráfico Y");
+        getContentPane().add(jToggleButton6);
+        jToggleButton6.setBounds(430, 530, 250, 50);
+
         labelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_lol/wpp/wpp.jpg"))); // NOI18N
         getContentPane().add(labelFundo);
         labelFundo.setBounds(0, 0, 1360, 730);
@@ -265,7 +306,7 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         BuscaMatches partida = null;
         BuscaLiga elo = null;
         BuscaCampeao campeao = null;
-        GerarGrafico grafico = new GerarGrafico();
+//        GerarGrafico grafico = new GerarGrafico();
         
         
         try {
@@ -308,7 +349,7 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         BuscaCampeao campeao2 = null;
         BuscaLiga elo2 = null;
         BuscaMatches partida2 = null;
-        GerarGrafico grafico2 = new GerarGrafico();
+        //GerarGrafico grafico2 = new GerarGrafico();
         
         //BuscaJogador buscaEmMostra = new BuscaJogador();
         try {
@@ -345,6 +386,14 @@ public class MostraInvocador1 extends javax.swing.JFrame{
 
     }//GEN-LAST:event_button3ActionPerformed
 
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -368,6 +417,12 @@ public class MostraInvocador1 extends javax.swing.JFrame{
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton jToggleButton5;
+    private javax.swing.JToggleButton jToggleButton6;
     private javax.swing.JLabel labelFundo;
     // End of variables declaration//GEN-END:variables
 }
