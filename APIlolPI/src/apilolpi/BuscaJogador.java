@@ -20,7 +20,7 @@ public class BuscaJogador extends MostraInvocador {
         public int level;
         public int accountId;
         public String server;
-        String key = "RGAPI-581468b5-b1bb-4504-8e3e-3ff56201530f";
+        String key = "RGAPI-cc94ae6d-62e2-4fff-9f89-c622da653e51";
 
     
         

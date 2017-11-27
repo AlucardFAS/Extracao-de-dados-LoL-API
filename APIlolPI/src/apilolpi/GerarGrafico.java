@@ -5,11 +5,14 @@
  */
 package apilolpi;
 
+import java.awt.BorderLayout;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
@@ -21,7 +24,7 @@ import org.jfree.data.general.DefaultPieDataset;
  *
  * @author victor.etrindade
  */
-public class GerarGrafico {
+public class GerarGrafico extends MostraInvocador1{
     
     public void graficoBarraJogador (int top, int jungle, int mid, int bot,int identfy) throws FileNotFoundException, IOException{
         DefaultCategoryDataset graficoBarra1 = new DefaultCategoryDataset();
@@ -33,9 +36,12 @@ public class GerarGrafico {
         
         JFreeChart grafico = ChartFactory.createBarChart("% de jogos por lane", "lane", "%", graficoBarra1,PlotOrientation.VERTICAL,false,true,false);
         
+        
         if(identfy == 1){
             OutputStream arquivo = new FileOutputStream("src/img/grafico_barra_j1.png");
             ChartUtilities.writeChartAsPNG(arquivo, grafico, 415, 260);
+            
+ 
         }
         if (identfy == 2) {
             OutputStream arquivo = new FileOutputStream("src/img/grafico_barra_j2.png");
@@ -50,6 +56,7 @@ public class GerarGrafico {
         graficoPizza.setValue("derrotas", losses);
         
         JFreeChart grafico = ChartFactory.createPieChart("Rate SoloQueue", graficoPizza, true, true, false);
+        
         
         if (identify == 1) {
             OutputStream arquivo = new FileOutputStream("src/img/grafico_pizza_solo_j1.png");

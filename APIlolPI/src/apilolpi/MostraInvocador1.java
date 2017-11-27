@@ -5,17 +5,27 @@
  */
 package apilolpi;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultKeyedValuesDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
  * @author fernando.asilva10
  */
 public class MostraInvocador1 extends javax.swing.JFrame{
-
-    
+        
     
     public MostraInvocador1() {
         initComponents();
@@ -35,6 +45,7 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         button1 = new java.awt.Button();
         button2 = new java.awt.Button();
         button3 = new java.awt.Button();
+        jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -46,6 +57,7 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         labelFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,6 +93,8 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         });
         getContentPane().add(button3);
         button3.setBounds(938, 11, 415, 77);
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(280, 160, 140, 70);
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -88,7 +102,7 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         jLabel1.setText("Busque um invocador");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 158, 415, 68);
+        jLabel1.setBounds(10, 158, 270, 68);
         jLabel1.getAccessibleContext().setAccessibleName("invocadorMostra");
 
         jTextField1.setEditable(false);
@@ -130,7 +144,7 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         jLabel4.setText("Busque um invocador");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(938, 158, 415, 68);
+        jLabel4.setBounds(910, 160, 270, 68);
 
         jTextField4.setEditable(false);
         jTextField4.setFont(new java.awt.Font("Myanmar Text", 1, 40)); // NOI18N
@@ -154,6 +168,8 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         jLabel6.setBounds(10, 11, 415, 259);
         getContentPane().add(jLabel7);
         jLabel7.setBounds(938, 466, 415, 259);
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(1210, 160, 140, 70);
 
         labelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_lol/wpp/wpp.jpg"))); // NOI18N
         getContentPane().add(labelFundo);
@@ -184,9 +200,10 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+            
+            
             jTextField1.setText(busca.nome);
-        
+            jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_lol_champion/"+campeao.nomeCamp+".png")));
             jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
             jLabel1.setText("<html><body>"
                 + "Level: "+busca.level+"<br/>"
@@ -197,14 +214,16 @@ public class MostraInvocador1 extends javax.swing.JFrame{
                 + elo.queue+"<br/>"
                 + elo.tier+": " +elo.rank+  " -- " +elo.ln+ "<br/>"
                 + "Pontos: " +elo.pdls+"<br/><br/>"
-                +  "<center/><br/><left>"
+                +  "<br/><left>"
                 + elo.queue2+"<br/>"
                 + elo.tier2+": " +elo.rank2+  " -- " +elo.ln2+"<br/>"
                 + "Pontos: " +elo.pdls2+ "<br/><br/>"
                 +"</body></html>"
                 );
+            jLabel2.removeAll();
             jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/grafico_barra_j1.png")));
-        
+            
+
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
@@ -228,9 +247,9 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         }
             
             jTextField3.setText(busca2.nome);
-            
+            jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_lol_champion/"+campeao2.nomeCamp+".png")));
             jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-            jLabel4.setText("<html><body><right>"
+            jLabel4.setText("<html><body><left>"
                 + "Level: "+busca2.level+"<br/>"
                 + "Campeão principal: "+campeao2.nomeCamp+"<br/>"
                 + "Nível de maestria: "+campeao2.lvlMst+"   Pontos: "+campeao2.mstPoints+"<br/>"       
@@ -239,13 +258,15 @@ public class MostraInvocador1 extends javax.swing.JFrame{
                 + elo2.queue+"<br/>"
                 + elo2.tier+": " +elo2.rank+  " -- " +elo2.ln+ "<br/>"
                 + "Pontos: " +elo2.pdls+"<br/><br/>"
-                +  "<center/><br/><left>"
+                +  "<br/><left>"
                 + elo2.queue2+"<br/>"
                 + elo2.tier2+": " +elo2.rank2+  " -- " +elo2.ln2+"<br/>"
                 + "Pontos: " +elo2.pdls2+ "<br/><br/>"
                 +"</body></html>"
                 );
             jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/grafico_barra_j2.png")));
+            
+
     }//GEN-LAST:event_button3ActionPerformed
 
     /**
@@ -264,6 +285,8 @@ public class MostraInvocador1 extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
