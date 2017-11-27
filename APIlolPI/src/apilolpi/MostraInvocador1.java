@@ -27,6 +27,85 @@ import org.jfree.data.general.DefaultPieDataset;
 public class MostraInvocador1 extends javax.swing.JFrame{
         
     
+    public void graficoBarraJogador (int top, int jungle, int mid, int bot,int identfy) throws FileNotFoundException, IOException{
+        DefaultCategoryDataset graficoBarra1 = new DefaultCategoryDataset();
+        
+        graficoBarra1.setValue(top, "Lane", "TOP");
+        graficoBarra1.setValue(jungle, "Lane", "JUNGLE");
+        graficoBarra1.setValue(mid, "Lane", "MID");
+        graficoBarra1.setValue(bot, "Lane", "BOT");
+        
+        JFreeChart grafico = ChartFactory.createBarChart("% de jogos por lane", "lane", "%", graficoBarra1,PlotOrientation.VERTICAL,false,true,false);
+        
+        ChartPanel graf = new ChartPanel(grafico, 415, 260, 415, 260, 415, 260, false, false, false, false, false, false);
+        if(identfy == 1){
+            
+            jPanel1.removeAll();
+            jPanel1.add(graf);
+            jPanel1.validate();
+ 
+        }
+        if (identfy == 2) {
+            
+            jPanel2.removeAll();
+            jPanel2.add(graf);
+            jPanel2.validate();
+        }
+    }
+    
+    public void graficoPizzaLigaSolo (int wins, int losses,int identify) throws FileNotFoundException, IOException{
+        DefaultPieDataset graficoPizza = new DefaultKeyedValuesDataset();
+        
+        graficoPizza.setValue("vitorias", wins);
+        graficoPizza.setValue("derrotas", losses);
+        
+        JFreeChart grafico = ChartFactory.createPieChart("Rate SoloQueue", graficoPizza, true, true, false);
+        
+        /*ChartPanel graf = new ChartPanel(grafico, 415, 260, 415, 260, 415, 260, false, false, false, false, false, false);
+
+        
+        if(identify == 1){
+            
+            jPanel1.removeAll();
+            jPanel1.add(graf);
+            jPanel1.validate();
+ 
+        }
+        if (identify == 2) {
+            
+            jPanel2.removeAll();
+            jPanel2.add(graf);
+            jPanel2.validate();
+        }*/
+        
+    }
+    
+    public void graficoPizzaLigaFlex (int wins, int losses,int identify) throws FileNotFoundException, IOException{
+        DefaultPieDataset graficoPizza = new DefaultKeyedValuesDataset();
+        
+        graficoPizza.setValue("vitorias", wins);
+        graficoPizza.setValue("derrotas", losses);
+        
+        JFreeChart grafico = ChartFactory.createPieChart("Rate FLEX", graficoPizza, true, true, false);
+        
+        /*ChartPanel graf = new ChartPanel(grafico, 415, 260, 415, 260, 415, 260, false, false, false, false, false, false);
+
+        
+        if(identify == 1){
+            
+            jPanel1.removeAll();
+            jPanel1.add(graf);
+            jPanel1.validate();
+ 
+        }
+        if (identify == 2) {
+            
+            jPanel2.removeAll();
+            jPanel2.add(graf);
+            jPanel2.validate();
+        }*/
+    }
+    
     public MostraInvocador1() {
         initComponents();
         setSize(1363,733);
@@ -54,10 +133,10 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         jLabel4 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         labelFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -162,14 +241,14 @@ public class MostraInvocador1 extends javax.swing.JFrame{
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(jLabel5);
         jLabel5.setBounds(938, 292, 415, 168);
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 466, 415, 259);
         getContentPane().add(jLabel6);
         jLabel6.setBounds(10, 11, 415, 259);
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(938, 466, 415, 259);
         getContentPane().add(jLabel9);
         jLabel9.setBounds(1210, 160, 140, 70);
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(940, 470, 416, 261);
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(10, 480, 416, 261);
 
         labelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_lol/wpp/wpp.jpg"))); // NOI18N
         getContentPane().add(labelFundo);
@@ -194,9 +273,9 @@ public class MostraInvocador1 extends javax.swing.JFrame{
             partida = new BuscaMatches(busca.accountId,busca.server,busca.key);
             elo = new BuscaLiga(busca.id,busca.server,busca.key);
             campeao = new BuscaCampeao(busca.server, busca.id,busca.key);
-            grafico.graficoBarraJogador(partida.top, partida.jungle, partida.mid, partida.bottom, 1);
-            grafico.graficoPizzaLigaSolo(elo.wins, elo.losses, 1);
-            grafico.graficoPizzaLigaFlex(elo.wins2, elo.losses2, 1);
+            graficoBarraJogador(partida.top, partida.jungle, partida.mid, partida.bottom, 1);
+            graficoPizzaLigaSolo(elo.wins, elo.losses, 1);
+            graficoPizzaLigaFlex(elo.wins2, elo.losses2, 1);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -220,8 +299,6 @@ public class MostraInvocador1 extends javax.swing.JFrame{
                 + "Pontos: " +elo.pdls2+ "<br/><br/>"
                 +"</body></html>"
                 );
-            jLabel2.removeAll();
-            jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/grafico_barra_j1.png")));
             
 
     }//GEN-LAST:event_button1ActionPerformed
@@ -239,9 +316,9 @@ public class MostraInvocador1 extends javax.swing.JFrame{
             elo2 = new BuscaLiga(busca2.id,busca2.server, busca2.key);
             partida2 = new BuscaMatches(busca2.accountId, busca2.server, busca2.key);
             campeao2 = new BuscaCampeao(busca2.server, busca2.id, busca2.key);
-            grafico2.graficoBarraJogador(partida2.top, partida2.jungle, partida2.mid, partida2.bottom, 2);
-            grafico2.graficoPizzaLigaSolo(elo2.wins, elo2.losses, 2);
-            grafico2.graficoPizzaLigaFlex(elo2.wins2, elo2.losses2, 2);
+            graficoBarraJogador(partida2.top, partida2.jungle, partida2.mid, partida2.bottom, 2);
+            graficoPizzaLigaSolo(elo2.wins, elo2.losses, 2);
+            graficoPizzaLigaFlex(elo2.wins2, elo2.losses2, 2);
         } catch (IOException ex) {
             Logger.getLogger(MostraInvocador.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -264,7 +341,6 @@ public class MostraInvocador1 extends javax.swing.JFrame{
                 + "Pontos: " +elo2.pdls2+ "<br/><br/>"
                 +"</body></html>"
                 );
-            jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/grafico_barra_j2.png")));
             
 
     }//GEN-LAST:event_button3ActionPerformed
@@ -279,14 +355,14 @@ public class MostraInvocador1 extends javax.swing.JFrame{
     private java.awt.Button button2;
     private java.awt.Button button3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
